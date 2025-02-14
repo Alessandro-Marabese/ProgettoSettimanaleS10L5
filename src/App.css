@@ -1,0 +1,45 @@
+#root {
+  background-color: #1e1f23;
+  font-family: "Outfit", serif;
+  min-height: 100vh;
+}
+#homepage {
+  background-color: #1e1f23;
+}
+#homepage img {
+  height: 55vw;
+  width: 55vw;
+}
+
+.card {
+  background-color: #1e1f23;
+  align-items: center;
+}
+h1 {
+  font-size: 9vw;
+}
+h4 {
+  font-size: 3vw;
+}
+#today-weather {
+  background-color: #2e2f3a;
+}
+#today-weather img {
+  height: 20vw;
+  width: 20vw;
+}
+#today-weather h2 {
+  font-size: 7vw;
+  font-weight: bold;
+}
+#temptoday {
+  font-size: 10vw;
+}
+#temptoday span {
+  font-size: 3vw;
+  font-weight: 400;
+}
+
+#forecast {
+  background-color: #2e2f3a;
+}
