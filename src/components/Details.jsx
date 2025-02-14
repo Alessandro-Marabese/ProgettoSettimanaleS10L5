@@ -58,7 +58,7 @@ const Details = (props) => {
                 return(
                   <Col key={ele.dt_txt} className="col-12 d-flex justify-content-evenly text-white align-items-center">
                     <img src={`https://openweathermap.org/img/wn/${ele.weather[0].icon}@2x.png`} alt="" />
-                    <p>{parseInt(ele.main.temp -273.15)} °C</p>
+                    <p>{parseInt(ele.main.temp_max -273.15)} °C/ {parseInt(ele.main.temp_min -273.15)} °C</p>
                     <p className="opacity-75">{ele.main.humidity} %</p>
                     <p className="opacity-75">{ele.dt_txt.slice(0,10)}</p>
                   </Col>
