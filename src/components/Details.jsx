@@ -39,7 +39,7 @@ const Details = (props) => {
       if(isLoading) {
         return <div>Caricamento</div>
       }
-    
+      
     return(
         <Container id="details" className="pt-5">
             {isLoading && <Loading />}
@@ -53,36 +53,18 @@ const Details = (props) => {
                 </Col>
             </Row>
             <Row id="forecast" className="mx-5 rounded pt-3 pb-2">
-                <Col className="col-12 d-flex justify-content-evenly text-white align-items-center">
-                    <img src="https://openweathermap.org/img/wn/04d@2x.png" alt="" />
-                    <p>{parseInt(weather.list[7].main.temp -273.15)} °C</p>
-                    <p className="opacity-75">{weather.list[7].dt_txt.slice(0,10)}</p>
-                    <p className="opacity-75">Saturday</p>
-                </Col>
-                <Col className="col-12 d-flex justify-content-evenly text-white align-items-center">
-                    <img src="https://openweathermap.org/img/wn/04d@2x.png" alt="" />
-                    <p>{parseInt(weather.list[15].main.temp -273.15)} °C</p>
-                    <p className="opacity-75">{weather.list[15].dt_txt.slice(0,10)}</p>
-                    <p className="opacity-75">Sunday</p>
-                </Col>
-                <Col className="col-12 d-flex justify-content-evenly text-white align-items-center">
-                    <img src="https://openweathermap.org/img/wn/04d@2x.png" alt="" />
-                    <p>{parseInt(weather.list[23].main.temp -273.15)} °C</p>
-                    <p className="opacity-75"> {weather.list[23].dt_txt.slice(0,10)}</p>
-                    <p className="opacity-75">Monday</p>
-                </Col>
-                <Col className="col-12 d-flex justify-content-evenly text-white align-items-center">
-                    <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="" />
-                    <p>{parseInt(weather.list[31].main.temp -273.15)} °C</p>
-                    <p className="opacity-75">{weather.list[31].dt_txt.slice(0,10)}</p>
-                    <p className="opacity-75">Tuesday</p>
-                </Col>
-                <Col className="col-12 d-flex justify-content-evenly text-white align-items-center">
-                    <img src="https://openweathermap.org/img/wn/01d@2x.png" alt="" />
-                    <p>{parseInt(weather.list[39].main.temp -273.15)} °C</p>
-                    <p className="opacity-75">{weather.list[39].dt_txt.slice(0,10)}</p>
-                    <p className="opacity-75">Wednesday</p>
-                </Col>
+              {weather.list.filter((ele) => ele.dt_txt.includes("12:00:00"))
+              .map((ele) => {
+                return(
+                  <Col key={ele.dt_txt} className="col-12 d-flex justify-content-evenly text-white align-items-center">
+                    <img src={`https://openweathermap.org/img/wn/${ele.weather[0].icon}@2x.png`} alt="" />
+                    <p>{parseInt(ele.main.temp -273.15)} °C</p>
+                    <p className="opacity-75">{ele.main.humidity} %</p>
+                    <p className="opacity-75">{ele.dt_txt.slice(0,10)}</p>
+                  </Col>
+                )
+              })
+              }                
             </Row>
             <NavBar />            
         </Container>
