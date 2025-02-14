@@ -43,3 +43,11 @@ h4 {
 #forecast {
   background-color: #2e2f3a;
 }
+#navbar {
+  background-color: #7d7e89;
+  height: 3rem;
+  position: sticky;
+  bottom: 0;
+  width: 81.5%;
+  margin-inline: auto;
+}
