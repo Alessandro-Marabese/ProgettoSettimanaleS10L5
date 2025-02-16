@@ -19,7 +19,7 @@ const Homepage = (props) => {
       <h4 className=" text-white opacity-75 mt-5 w-75 mx-auto">Get to know your weather maps and radar precipitation forecast</h4>
       <Form className="w-75 mx-auto mt-5 ">
         <Form.Group className="mt-5 w-75 mx-auto">
-          <Form.Control type="text" placeholder="Search city..." value={props.search} onChange={(e) => props.setSearch(e.target.value)} />
+          <Form.Control type="text" placeholder="Search city..." value={props.search} onChange={(e) => props.setSearch(e.target.value)} required />
         </Form.Group>
         <Link to="/details" className="btn btn-success mt-5 mb-5">
           Search

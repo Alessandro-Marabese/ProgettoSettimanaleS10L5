@@ -65,31 +65,27 @@ const Details = (props) => {
           .filter((ele) => ele.dt_txt.includes("12:00:00"))
           .map((ele) => {
             return (
-              <>
-                <Col key={ele.dt_txt} className="col-12 d-md-none d-flex justify-content-evenly text-white align-items-center">
-                  <img src={`https://openweathermap.org/img/wn/${ele.weather[0].icon}@2x.png`} alt="" />
-                  <p>
-                    {parseInt(ele.main.temp_min - 273.15)} / {parseInt(ele.main.temp_max - 273.15)} °C
-                  </p>
-                  <p className="opacity-75">{ele.main.humidity} %</p>
-                  <p className="opacity-75">{ele.dt_txt.slice(0, 10)}</p>
-                </Col>
-                <Col className="card-forecast col-2 d-none d-md-block">
-                  <Card className="text-white">
-                    <Card.Img variant="top" src={`https://openweathermap.org/img/wn/${ele.weather[0].icon}@2x.png`} />
-                    <Card.Body>
-                      <Card.Title>
-                        {parseInt(ele.main.temp_min - 273.15)} / {parseInt(ele.main.temp_max - 273.15)} °C
-                      </Card.Title>
-                      <Card.Text>
-                        <p className="opacity-75">{ele.weather[0].description}</p>
-                        <p className="opacity-75">Humidity: {ele.main.humidity} %</p>
-                        <p className="opacity-75">{ele.dt_txt.slice(0, 10)}</p>
-                      </Card.Text>
-                    </Card.Body>
-                  </Card>
-                </Col>
-              </>
+              <Col key={ele.dt_txt} className="card-forecast col-12 d-flex justify-content-evenly text-white align-items-center d-md-block">
+                <img className="d-md-none" src={`https://openweathermap.org/img/wn/${ele.weather[0].icon}@2x.png`} alt="" />
+                <p className="d-md-none">
+                  {parseInt(ele.main.temp_min - 273.15)} / {parseInt(ele.main.temp_max - 273.15)} °C
+                </p>
+                <p className="opacity-75 d-md-none">{ele.main.humidity} %</p>
+                <p className="opacity-75 d-md-none">{ele.dt_txt.slice(0, 10)}</p>
+                <Card className="text-white d-none d-md-block">
+                  <Card.Img variant="top" src={`https://openweathermap.org/img/wn/${ele.weather[0].icon}@2x.png`} />
+                  <Card.Body>
+                    <Card.Title>
+                      {parseInt(ele.main.temp_min - 273.15)} / {parseInt(ele.main.temp_max - 273.15)} °C
+                    </Card.Title>
+                    <Card.Text>
+                      <p className="opacity-75">{ele.weather[0].description}</p>
+                      <p className="opacity-75">Humidity: {ele.main.humidity} %</p>
+                      <p className="opacity-75">{ele.dt_txt.slice(0, 10)}</p>
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
             );
           })}
       </Row>

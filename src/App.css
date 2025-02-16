@@ -55,9 +55,7 @@ h4 {
   width: 81.5%;
   margin-inline: auto;
 }
-.card-forecast {
-  width: 20%;
-}
+
 #today-weather h2 {
   padding-left: 4vw;
 }
@@ -68,6 +66,16 @@ h4 {
   #homepage img {
     height: 42vw;
     width: 42vw;
+  }
+  .card-forecast {
+    width: 20%;
+    padding-inline: 0;
+  }
+  .card {
+    margin-inline: 0.5rem;
+  }
+  #forecast {
+    padding-inline: 0.4rem;
   }
 }
 @media (min-width: 992px) {

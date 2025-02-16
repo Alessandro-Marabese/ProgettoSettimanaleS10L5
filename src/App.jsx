@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import Error from "./components/Error";
 
 function App() {
-  const [search, setSearch] = useState();
+  const [search, setSearch] = useState("");
   const [isError, setIsError] = useState(false);
   const [lat, setLat] = useState();
   const [lon, setLon] = useState();
